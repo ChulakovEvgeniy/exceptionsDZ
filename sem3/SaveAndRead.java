@@ -1,9 +1,7 @@
 package sem3;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.*;
+import java.nio.file.Path;
 
 public class SaveAndRead{
 
@@ -19,10 +17,9 @@ public class SaveAndRead{
     public String read(String filePath)throws Exception {
         BufferedReader br = new BufferedReader(new FileReader(filePath));
         StringBuilder stringBuilder = new StringBuilder();
-        String text = "0";
-        while (text != ""){
-            text = br.readLine();
-            stringBuilder.append(text);
+        String text;
+        while ((text = br.readLine()) != null){
+            stringBuilder.append(text + "\n");
         }
         br.close();
         return stringBuilder.toString();
