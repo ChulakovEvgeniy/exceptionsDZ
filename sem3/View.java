@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 
 //текст для быстрой проверки: бомж егор егоревич 05.11.1999 8909 м
-public class InputText {
+public class View {
     Scanner scanner = new Scanner(System.in);
     ListHuman listHuman = new ListHuman();
     SaveAndRead saveAndRead = new SaveAndRead();
