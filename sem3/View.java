@@ -26,23 +26,10 @@ public class View {
                     createdHuman();
                     break;
                 case "2":
-                    try {
-                        String file = listHuman.getHuman(listHuman.size()-1).getLastName()+ ".txt";
-                        saveAndRead.save(listHuman,file);
-                        System.out.println("Успешно сохранено");
-                    }catch (Exception e){
-                        System.out.println("В сохранение произошла ошибка");
-                    }
+                    save();
                     break;
                 case "3":
-                    try {
-                        System.out.println("Введите какой файл хотите прочитать?");
-                        String filePath = scanner.nextLine()+ ".txt";
-                        System.out.println(filePath);
-                        System.out.println(saveAndRead.read(filePath));
-                    }catch (Exception e){
-                        System.out.println("не найден файл");
-                    }
+                    read();
                     break;
                 case "4":
                     System.out.println(listHuman.toString());
@@ -74,6 +61,27 @@ public class View {
             String gender = (String) myList.get(5);
             Human human = new Human(firstName, lastName,nameFather, date, telephone,gender);
             listHuman.addHuman(human);
+        }
+    }
+
+    public void save(){
+        try {
+            String file = listHuman.getHuman(listHuman.size()-1).getLastName()+ ".txt";
+            saveAndRead.save(listHuman,file);
+            System.out.println("Успешно сохранено");
+        }catch (Exception e){
+            System.out.println("В сохранение произошла ошибка");
+        }
+    }
+
+    public void read(){
+        try {
+            System.out.println("Введите какой файл хотите прочитать?");
+            String filePath = scanner.nextLine()+ ".txt";
+            System.out.println(filePath);
+            System.out.println(saveAndRead.read(filePath));
+        }catch (Exception e){
+            System.out.println("не найден файл");
         }
     }
 }
