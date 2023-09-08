@@ -36,8 +36,7 @@ public class InputText {
                     break;
                 case "3":
                     System.out.println("Введите какой файл хотите прочитать?");
-                    String filePath = scanner.nextLine();
-                    filePath +=".txt";
+                    String filePath = scanner.nextLine() + ".txt";
                     try {
                         System.out.println(saveAndRead.read(filePath));
                     }catch (Exception e){

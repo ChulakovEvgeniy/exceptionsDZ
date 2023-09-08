@@ -5,8 +5,7 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 
-public class SaveAndRead {
-
+public class SaveAndRead{
 
     public void save(ListHuman humanList, String filePath)throws Exception{
         BufferedWriter bw = new BufferedWriter(new FileWriter(filePath));
@@ -15,9 +14,8 @@ public class SaveAndRead {
             System.out.println(human);
             bw.write(human +"\n");
             }
+        bw.close();
         }
-
-
     public String read(String filePath)throws Exception {
         BufferedReader br = new BufferedReader(new FileReader(filePath));
         StringBuilder stringBuilder = new StringBuilder();
@@ -26,6 +24,7 @@ public class SaveAndRead {
             text = br.readLine();
             stringBuilder.append(text);
         }
+        br.close();
         return stringBuilder.toString();
     }
 }
